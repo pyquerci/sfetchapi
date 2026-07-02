@@ -1,4 +1,4 @@
-# fetchapi
+# sfetchapi
 
 A command-line tool to download data from REST APIs and save the responses as local files.
 
@@ -6,7 +6,7 @@ A command-line tool to download data from REST APIs and save the responses as lo
 
 ## Overview
 
-`fetchapi` reads a list of API endpoints from a YAML configuration file, authenticates against them using a single set of HTTP Basic Auth credentials, and saves each response to a local file. JSON responses are automatically pretty-printed; any other content type is saved as-is.
+`sfetchapi` reads a list of API endpoints from a YAML configuration file, authenticates against them using a single set of HTTP Basic Auth credentials, and saves each response to a local file. JSON responses are automatically pretty-printed; any other content type is saved as-is.
 
 It is designed primarily to fire multiple API calls against the same device but nothing stops you from pointing individual entries at other hosts too, as long as they all share the same credentials.
 
@@ -36,8 +36,8 @@ It is designed primarily to fire multiple API calls against the same device but 
 ## Installation
 
 ```bash
-git clone https://github.com/pyquerci/fetchapi.git
-cd fetchapi
+git clone https://github.com/pyquerci/sfetchapi.git
+cd sfetchapi
 ```
 
 Install the third-party packages via pip and run it directly with Python.
@@ -47,16 +47,16 @@ Install the third-party packages via pip and run it directly with Python.
 A pre-compiled Windows executable is included in the repository, built with PyInstaller 6.19.0 using the command:
 
 ```bash
-pyinstaller --onefile fetchapi.py
+pyinstaller --onefile sfetchapi.py
 ```
 
-No Python installation is needed, just download and run `fetchapi.exe`. For convenience, you can add it to a folder in your system `PATH` to invoke it from any directory; for example, I keep mine in `C:\Tools\fetchapi`.
+No Python installation is needed, just download and run `sfetchapi.exe`. For convenience, you can add it to a folder in your system `PATH` to invoke it from any directory; for example, I keep mine in `C:\Tools\sfetchapi`.
 
 ---
 
 ## Configuration
 
-`fetchapi` reads its settings from a YAML file (`default.yaml` by default). The file defines optional credentials and a list of `filename: url` pairs to download. Below an example:
+`sfetchapi` reads its settings from a YAML file (`default.yaml` by default). The file defines optional credentials and a list of `filename: url` pairs to download. Below an example:
 
 ```yaml
 credentials:
@@ -76,7 +76,7 @@ items:
 
 It targets a F5 BIG-IP device's iControl REST API, but the file is fully customizable for any REST API that supports HTTP Basic Auth.
 
-- If `username` or `password` are left as `null`, `fetchapi` will prompt for them interactively (the password input is masked).
+- If `username` or `password` are left as `null`, `sfetchapi` will prompt for them interactively (the password input is masked).
 - The credentials, whether provided in the YAML file or entered interactively, **are shared across all** endpoints in a single run.
 - Each key under `items` is the local filename the response will be saved to; each value is the full URL to fetch.
 - The example targets a single F5 BIG-IP host, but the URLs listed under `items` can just as well point to multiple different devices, as long as they all share the same credentials.
@@ -86,7 +86,7 @@ It targets a F5 BIG-IP device's iControl REST API, but the file is fully customi
 ## Usage
 
 ```
-fetchapi.py [-h]
+sfetchapi.py [-h]
             [-a]
             [-c CONFIG]
 ```
@@ -103,23 +103,23 @@ fetchapi.py [-h]
 
 ```bash
 # Run using the default configuration file (default.yaml)
-fetchapi.py
+sfetchapi.py
 
 # Run using a custom configuration file
-fetchapi.py -c D:\Home\Desktop\bigip01.yaml
+sfetchapi.py -c D:\Home\Desktop\bigip01.yaml
 
 # Show author and version information
-fetchapi.py -a
+sfetchapi.py -a
 ```
 
 ---
 
 ## How It Works
 
-For each `filename: url` pair defined in the `items` section of the config file, `fetchapi`:
+For each `filename: url` pair defined in the `items` section of the config file, `sfetchapi`:
 
 1. Sends an HTTP GET request to the URL, authenticating with the provided credentials.
-2. If the server responds with `401 Unauthorized`, the endpoint is skipped and `fetchapi` moves on to the next one.
+2. If the server responds with `401 Unauthorized`, the endpoint is skipped and `sfetchapi` moves on to the next one.
 3. On any other error status, or on connection/timeout errors, the error is printed and the next endpoint is processed.
 4. On success, the response body is parsed as JSON and re-serialized with indentation for readability . If the response is not valid JSON, the raw text is saved instead.
 5. The result is written to the corresponding local file.
@@ -130,7 +130,7 @@ SSL certificate verification is disabled by design.
 
 ## Production Testing
 
-`fetchapi` has been used to retrieve all the API endpoints required by [`f5report`](https://github.com/pyquerci/f5report), a reporting tool for F5 BIG-IP devices, across several production machines. No issues were encountered during its use.
+`sfetchapi` has been used to retrieve all the API endpoints required by [`f5report`](https://github.com/pyquerci/f5report), a reporting tool for F5 BIG-IP devices, across several production machines. No issues were encountered during its use.
 
 ---
 
