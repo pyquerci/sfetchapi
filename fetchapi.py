@@ -1,6 +1,6 @@
 # Author: Andrea Querci
 # version: 1.0.0
-# project: https://github.com/pyquerci/fetchapi
+# project: https://github.com/pyquerci/sfetchapi
 # license: GPLv2
 
 import argparse
@@ -102,7 +102,7 @@ def main() -> None:
         print(
             "author: Andrea Querci\n"
             "version: 1.0\n"
-            "project: https://github.com/pyquerci/fetchapi\n"
+            "project: https://github.com/pyquerci/sfetchapi\n"
             "license: GPLv2"
         )
         return
