@@ -7,7 +7,6 @@ import argparse
 import json
 import sys
 from pathlib import Path
-
 import pwinput
 import requests
 import yaml
