@@ -132,6 +132,8 @@ The GIF below shows sfetchapi in action: fetching data from the configured API e
 
 ![f5report demo](sfetchapi.gif)
 
+The generated information has been withheld for privacy reasons.
+
 ---
 
 ## Production Testing
