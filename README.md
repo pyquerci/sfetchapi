@@ -132,7 +132,7 @@ The GIF below shows `sfetchapi` in action: fetching data from the configured API
 
 ![f5report demo](sfetchapi.gif)
 
-The generated information has been withheld for privacy reasons.
+Sensitive information has been redacted for privacy reasons.
 
 ---
 
