@@ -1,7 +1,7 @@
 # sfetchapi (Simple Fecth API)
 [![created by](https://img.shields.io/badge/created%20by-Andrea%20Querci-555?style=flat-square)](https://github.com/pyquerci)
 [![release](https://img.shields.io/github/v/release/pyquerci/sfetchapi?style=flat-square&color=007ec6)](https://github.com/pyquerci/sfetchapi/releases)
-![platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D6?style=flat-square)
+![platform](https://img.shields.io/badge/platform-cross--platform-0f7a3d?style=flat-square)
 ![python](https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square)
 [![stars](https://img.shields.io/github/stars/pyquerci/sfetchapi?style=flat-square&color=dfb317)](https://github.com/pyquerci/sfetchapi/stargazers)
 [![license](https://img.shields.io/github/license/pyquerci/sfetchapi?style=flat-square&color=97ca00)](LICENSE)
