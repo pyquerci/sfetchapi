@@ -45,10 +45,11 @@ It is designed primarily to fire multiple API calls against the same device but 
 git clone https://github.com/pyquerci/sfetchapi.git
 cd sfetchapi
 pip install -r requirements.txt
-python sfetchapi.py
 ```
 
-Install the third-party packages via pip and run it directly with Python.
+Install the third-party packages via pip run it directly with Python from the project directory.
+
+---
 
 ### Windows
 
