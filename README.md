@@ -136,7 +136,7 @@ SSL certificate verification is disabled by design.
 
 The GIF below shows `sfetchapi` in action: fetching data from the configured API endpoints and saving each response as a local JSON file, ready to be used for other analysis:
 
-![f5report demo](demo.gif)
+![sfetchapi demo](demo.gif)
 
 Sensitive information has been redacted for privacy reasons.
 
