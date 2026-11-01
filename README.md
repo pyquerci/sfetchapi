@@ -49,8 +49,6 @@ pip install -r requirements.txt
 
 Install the third-party packages via pip and run it directly with Python from the project directory.
 
----
-
 ### Windows
 
 A pre-compiled Windows executable is included in the repository, built with PyInstaller 6.19.0 using the command:
